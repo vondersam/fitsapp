@@ -16,7 +16,7 @@
     </form>
 
     <!-- Different navigation if login or not -->
-    <% if user_signed_in? %>
+    <%# if user_signed_in? %>
 
       <!-- Notification -->
       <%= link_to "#", class: "navbar-item navbar-link" do %>
@@ -50,7 +50,7 @@
         </div>
       </div>
 
-    <% else %>
+    <%# else %>
 
       <!-- Login text link -->
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-item navbar-link" %>
