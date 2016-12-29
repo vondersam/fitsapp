@@ -1,4 +1,3 @@
-class ConversationsController < ApplicationController
   class ConversationsController < ApplicationController
   before_action :authenticate_user!
   before_action :get_mailbox
@@ -72,5 +71,6 @@ class ConversationsController < ApplicationController
    def get_conversation
     @conversation ||= @mailbox.conversations.find(params[:id])
   end
+
 end
-end
+
