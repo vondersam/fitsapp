@@ -6,7 +6,7 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :pic_url
       t.integer :phone_number
       t.string :email
-      # t.references :trainer, foreign_key: true
+      t.references :trainer, foreign_key: true
 
       t.timestamps
     end
