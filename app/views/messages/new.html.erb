@@ -1,0 +1,38 @@
+<%= content_for(:title) do %>
+  Fitsapp | Messages
+<% end %>
+
+<div class="container">
+<%#= @chosen_recipient.first_name %>
+<!-- <h3>Send a message to</h3> -->
+
+
+    <div class="form-group">
+    <%= link_to(user_path(@chosen_recipient), {class: "btn-center"}) do %>
+      <div>
+        <%= image_tag @chosen_recipient.profile_pic_url, class: "avatar-large" %>
+      </div>
+      <div>
+        <%= @chosen_recipient.first_name %>
+      </div>
+      <% end %>
+      <%= form_tag messages_path, method: :post do %>
+    </div>
+
+    <div class="form-group">
+      <%#= label_tag 'message[subject]', 'Subject' %>
+      <%= text_field_tag 'message[subject]', nil, class: 'form-control', required: true, placeholder: 'Add a subject' %>
+    </div>
+
+    <div class="form-group">
+      <%#= label_tag 'message[body]', placeholder: 'Message' %>
+      <%= text_field_tag 'message[body]', nil, cols: 3, class: 'form-control', required: true, placeholder: 'Type a message' %>
+
+    </div>
+
+    <div class="form-group">
+      <%= hidden_field_tag :recipients, @chosen_recipient.id %>
+    </div>
+
+    <%= submit_tag 'Send', class: 'btn btn-primary btn-formo' %>
+    <% end %>

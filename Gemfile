@@ -60,6 +60,8 @@ gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
+gem 'bootstrap-will_paginate'
+gem 'will_paginate'
 
 # chat
 gem 'mailboxer'

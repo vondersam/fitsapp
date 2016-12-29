@@ -1,0 +1,33 @@
+<%= content_for(:title) do %>
+  Fitsapp | Messages
+<% end %>
+
+<div class="container">
+  <h2 class="text-center">Messages</h2>
+
+  <div class="row">
+    <div class="col-sm-3">
+      <ul class="nav nav-pills nav-stacked">
+        <%= mailbox_section 'inbox', @box %>
+        <%= mailbox_section 'sent', @box %>
+        <%= mailbox_section 'trash', @box %>
+      </ul>
+    </div>
+
+
+    <%= link_to 'Start conversation', new_message_path, class: 'btn-center' %>
+
+    <div class="col-sm-9">
+      <% if @box == 'trash' %>
+      <br>
+      <%= link_to 'Empty trash', empty_trash_conversations_path, class: 'btn btn-primary btn-formo', method: :delete,
+       data: {confirm: 'Are you sure?'} %>
+       <% end %>
+
+       <ul class="list-group">
+        <%= render partial: 'conversations/conversation', collection: @conversations %>
+      </ul>
+
+      <%#= will_paginate %>
+    </div>
+</div>
