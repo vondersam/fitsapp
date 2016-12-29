@@ -53,14 +53,15 @@
     <% else %>
 
       <!-- Login text link -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-item navbar-link" %>
+      <%= link_to t(".sign_in", default: "Login User"), new_user_session_path, class: "navbar-item navbar-link" %>
       <%= link_to t(".sign_in", default: "Login Trainer"), new_trainer_session_path, class: "navbar-item navbar-link" %>
 
     <% end %>
 
     <!-- Button (call-to-action) -->
-    <%= link_to t(".top_call_to_action", default: "Post stuff"), "#", class: "navbar-item navbar-button btn" %>
+    <%= link_to t(".top_call_to_action", default: "Chat"), "#", class: "navbar-item navbar-button btn" %>
   </div>
+
 
   <!-- Dropdown list appearing on mobile only -->
   <div class="navbar-item hidden-md hidden-lg">
