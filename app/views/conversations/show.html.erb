@@ -19,8 +19,6 @@
               <% @conversation.receipts_for(current_user).reverse.each do |receipt| %>
               <% message = receipt.message %>
 
-              <% avatar_url = message.sender.pic_url %>
-
           <% if message.sender.first_name == current_user.first_name %>
             <div class="msg-cont-sender">
                 <div class="msg-sender">
