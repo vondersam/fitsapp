@@ -66,3 +66,6 @@ gem 'will_paginate'
 # chat
 gem 'mailboxer'
 
+# roles
+gem 'cancancan'
+

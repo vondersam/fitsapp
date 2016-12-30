@@ -8,7 +8,7 @@
   <div class="navbar-right hidden-xs hidden-sm">
 
     <!-- Different navigation if login or not -->
-    <% if user_signed_in? || trainer_signed_in? %>
+    <% if user_signed_in? %>
     <% avatar_url = current_user.pic_url %>
 
       <!-- Profile picture and dropdown -->
@@ -44,7 +44,7 @@
   <!-- Dropdown list appearing on mobile only -->
   <div class="navbar-right hidden-md hidden-lg">
     <!-- Different navigation if login or not -->
-    <% if user_signed_in? || trainer_signed_in? %>
+    <% if user_signed_in? %>
     <% avatar_url = current_user.pic_url %>
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
