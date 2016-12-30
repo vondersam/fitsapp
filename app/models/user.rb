@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :sent_messages, class_name: "Message", foreign_key: "sender_id"
   has_many :received_messages, class_name: "Message", foreign_key: "recipient_id"
 
+  # roles
+  ROLES = %i[trainer user]
 
   # Mailboxer email configuration
   def mailboxer_email(object)
@@ -23,5 +25,6 @@ class User < ApplicationRecord
   def name
     "#{email}"
   end
+
 
 end

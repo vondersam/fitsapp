@@ -17,6 +17,9 @@ ActiveAdmin.register User do
     f.inputs "Admin" do
       f.input :admin
     end
+    f.inputs "Role" do
+      f.input :role
+    end
     f.actions
   end
 

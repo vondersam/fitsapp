@@ -26,6 +26,7 @@ samuel.email = "samuel@horn.com"
 samuel.pic_url = "http://lorempixel.com/400/400/people/"
 samuel.password = "FUBARS"
 samuel.password_confirmation = "FUBARS"
+samuel.role = "trainer"
 samuel.valid?
 samuel.save!
 
@@ -36,6 +37,7 @@ gregory.email = "gregory@griffin.com"
 gregory.pic_url = "http://lorempixel.com/400/400/people/"
 gregory.password = "FUBARS"
 gregory.password_confirmation = "FUBARS"
+gregory.role = "trainer"
 gregory.valid?
 gregory.save!
 
@@ -46,6 +48,7 @@ jasper.email = "jasper@hendrickx.com"
 jasper.pic_url = "http://lorempixel.com/400/400/people/"
 jasper.password = "FUBARS"
 jasper.password_confirmation = "FUBARS"
+jasper.role = "user"
 jasper.valid?
 jasper.save!
 
@@ -56,6 +59,7 @@ samuelbrown.email = "samuel@rodriguez.com"
 samuelbrown.pic_url = "http://lorempixel.com/400/400/people/"
 samuelbrown.password = "FUBARS"
 samuelbrown.password_confirmation = "FUBARS"
+samuel.role = "user"
 samuelbrown.valid?
 samuelbrown.save!
 
@@ -66,6 +70,7 @@ random.email = "henrich@fruchart.com"
 random.pic_url = "http://lorempixel.com/400/400/people/"
 random.password = "FUBARS"
 random.password_confirmation = "FUBARS"
+random.role = "user"
 random.valid?
 random.save!
 
