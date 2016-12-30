@@ -2,19 +2,16 @@
   <%= link_to conversation.subject, conversation_path(conversation) %>
 
   <div class="btn-group-vertical pull-right">
-    <% if conversation.is_trashed?(current_user) %>
-    <%= link_to 'Restore', restore_conversation_path(conversation), class: '', method: :post %>
-    <% else %>
-    <%= link_to '<i class="fa fa-trash-o" aria-hidden="true"></i>
-'.html_safe, conversation_path(conversation), class: '', method: :delete,
-    data: {confirm: 'Are you sure?'} %>
+    <%# if conversation.is_trashed?(current_user) %>
+      <%#= link_to 'Restore', restore_conversation_path(conversation), class: '', method: :post %>
+      <%# else %>
+      <%#= link_to '<i class="fa fa-trash-o" aria-hidden="true"></i>'.html_safe, conversation_path(conversation), class: '', method: :delete,
+      data: {confirm: 'Are you sure?'} %>
+    <%# end %>
 
       <% if conversation.is_unread?(current_user) %>
-      <%= link_to '<i class="fa fa-check-square-o" aria-hidden="true"></i>
-'.html_safe, mark_as_read_conversation_path(conversation),
-      class: '', method: :post %>
+        <%= link_to '<i class="fa fa-check-square-o" aria-hidden="true"></i>'.html_safe, mark_as_read_conversation_path(conversation), class: '', method: :post %>
       <% end %>
-    <% end %>
   </div>
 </li>
 

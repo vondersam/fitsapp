@@ -8,50 +8,50 @@
       <div class="msg-avatar-left">
         <%= link_to(user_path(@other[0]), {class: "card-link"}) do %>
           <%= image_tag @other[0].pic_url, class: "avatar" %>
-            <%= @other[0].first_name %>
-          <% end %>
-      </div>
-
-  <div class="panel panel-default">
-    <div class="panel-heading"><%= @conversation.subject %></div>
-    <div class="panel-body msg-background">
-          <div class="messages">
-              <% @conversation.receipts_for(current_user).reverse.each do |receipt| %>
-              <% message = receipt.message %>
-
-          <% if message.sender.first_name == current_user.first_name %>
-            <div class="msg-cont-sender">
-                <div class="msg-sender">
-                    <div class="msg-content">
-                      <p><%= message.body %></p>
-                    </div>
-                    <div class="msg-date">
-                      <%= message.created_at.strftime("%H:%M on %a") %>
-                      </div>
-                    </div>
-                </div>
-              <% else %>
-              <div class="msg-cont-receiver">
-                  <div class="msg-receiver">
-                    <div class="msg-content">
-                      <p><%= message.body %></p>
-                    </div>
-                    <div class="msg-date">
-                      <%= message.created_at.strftime("%H:%M on %a") %>
-                    </div>
-              <% end %>
-            <% end %>
-          </div>
-        </div>
-      </div>
-
-        <%= form_tag reply_conversation_path(@conversation), method: :post do %>
-          <div class="form-group">
-            <%= text_field_tag 'body', nil, cols: 3, class: 'form-control', placeholder: 'Type something...', required: true %>
-          </div>
+          <%= @other[0].first_name %>
         <% end %>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading"><%= @conversation.subject %></div>
+          <div class="panel-body msg-background">
+            <div class="messages">
+            <% @conversation.receipts_for(current_user).each do |receipt| %>
+            <% message = receipt.message %>
+
+            <% if message.sender == current_user %>
+              <div class="msg-cont-sender">
+                <div class="msg-sender">
+                  <div class="msg-content">
+                    <p><%= message.body %></p>
+                  </div>
+                  <div class="msg-date">
+                    <%= message.created_at.strftime("%H:%M on %a") %>
+                  </div>
+                </div>
+              </div>
+
+            <% else %>
+
+            <div class="msg-cont-receiver">
+              <div class="msg-receiver">
+                <div class="msg-content">
+                  <p><%= message.body %></p>
+                </div>
+                <div class="msg-date">
+                  <%= message.created_at.strftime("%H:%M on %a") %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+
+      <%= form_tag reply_conversation_path(@conversation), method: :post do %>
+        <div class="form-group">
+          <%= text_field_tag 'body', nil, cols: 3, class: 'form-control', placeholder: 'Type something...', required: true %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
-  </div>
-      </div>

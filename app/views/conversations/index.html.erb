@@ -10,21 +10,19 @@
       <ul class="nav nav-pills nav-stacked">
         <%= mailbox_section 'inbox', @box %>
         <%= mailbox_section 'sent', @box %>
-        <%= mailbox_section 'trash', @box %>
+        <%#= mailbox_section 'trash', @box %>
         <li>
           <%= link_to 'New chat', new_message_path %>
         </li>
       </ul>
     </div>
 
-
-
     <div class="col-sm-9">
-      <% if @box == 'trash' %>
-      <br>
-      <%= link_to 'Empty trash', empty_trash_conversations_path, class: 'btn btn-primary btn-formo', method: :delete,
+      <%# if @box == 'trash' %>
+      <!-- <br> -->
+      <%#= link_to 'Empty trash', empty_trash_conversations_path, class: 'btn btn-primary btn-formo', method: :delete,
        data: {confirm: 'Are you sure?'} %>
-       <% end %>
+       <%# end %>
 
        <ul class="list-group">
         <%= render partial: 'conversations/conversation', collection: @conversations %>
