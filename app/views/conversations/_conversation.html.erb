@@ -9,9 +9,9 @@
       data: {confirm: 'Are you sure?'} %>
     <%# end %>
 
-      <% if conversation.is_unread?(current_user) %>
-        <%= link_to '<i class="fa fa-check-square-o" aria-hidden="true"></i>'.html_safe, mark_as_read_conversation_path(conversation), class: '', method: :post %>
-      <% end %>
+      <%# if conversation.is_unread?(current_user) %>
+        <%#= link_to '<i class="fa fa-check-square-o" aria-hidden="true"></i>'.html_safe, mark_as_read_conversation_path(conversation), class: '', method: :post %>
+      <%# end %>
   </div>
 </li>
 
