@@ -3,18 +3,18 @@
 <% end %>
 
 <div class="container">
-  <div class="msg-avatar-left">
-    <%= link_to(user_path(@other[0]), {class: "card-link"}) do %>
-      <%= image_tag @other[0].pic_url, class: "avatar" %>
-        <%= @other[0].first_name %>
-      <% end %>
-  </div>
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <div class="msg-avatar-left">
+        <%= link_to(user_path(@other[0]), {class: "card-link"}) do %>
+          <%= image_tag @other[0].pic_url, class: "avatar" %>
+            <%= @other[0].first_name %>
+          <% end %>
+      </div>
 
   <div class="panel panel-default">
     <div class="panel-heading"><%= @conversation.subject %></div>
     <div class="panel-body msg-background">
-      <div class="row">
-        <div class="col-xs-12">
           <div class="messages">
               <% @conversation.receipts_for(current_user).reverse.each do |receipt| %>
               <% message = receipt.message %>
@@ -39,10 +39,8 @@
                       <p><%= message.body %></p>
                     </div>
                     <div class="msg-date">
-                      <%= message.created_at.strftime("%H:%M on  %a") %>
+                      <%= message.created_at.strftime("%H:%M on %a") %>
                     </div>
-                  </div>
-                </div>
               <% end %>
             <% end %>
           </div>
@@ -57,3 +55,5 @@
     </div>
   </div>
 </div>
+  </div>
+      </div>
