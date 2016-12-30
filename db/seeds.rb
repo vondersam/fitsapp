@@ -9,8 +9,8 @@
 
 
 admin = User.new
-admin.first_name = "admin"
-admin.last_name = "admin"
+admin.first_name = "Admin"
+admin.last_name = ""
 admin.email = "admin@fitsapp.com"
 admin.pic_url = "http://lorempixel.com/400/400/people/"
 admin.password = "FUBARS"
