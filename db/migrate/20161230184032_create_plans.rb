@@ -4,7 +4,7 @@ class CreatePlans < ActiveRecord::Migration[5.0]
       t.references :user, foreign_key: true
       t.date :date
       t.string :meal
-      t.string :excercise
+      t.string :exercise
       t.string :meditation
 
       t.timestamps

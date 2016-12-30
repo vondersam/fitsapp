@@ -1,0 +1,24 @@
+<%= content_for(:title) do %>
+  Fitsapp | Add a plan
+<% end %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+      <h2 class="text-center">Create a new plan</h2>
+        <%= simple_form_for @new_plan, html: { multipart: :true } do |f| %>
+          <%= f.input :title, label: false, placeholder: "Title" %>
+          <%= f.input :date, label: false, placeholder: "Date" %>
+          <%= f.input :meal, label: false, placeholder: "Food", as: :text %>
+          <%= f.input :exercise, label: false, placeholder: "exercise", as: :text %>
+          <%= f.input :meditation, label: false, placeholder: "meditation", as: :text %>
+          <%= f.input :user_id, label: false, placeholder: "User ID", as: :text %>
+
+          <div class="btn-center">
+            <%= f.button :submit, 'Save', class:  "btn-primary btn-center" %>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
