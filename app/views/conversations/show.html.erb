@@ -24,26 +24,22 @@
           <% if message.sender.first_name == current_user.first_name %>
             <div class="msg-cont-sender">
                 <div class="msg-sender">
-                  <%#= image_tag avatar_url, class: "avatar-sm" %>
-                    <%#= message.sender.first_name %>
                     <div class="msg-content">
                       <p><%= message.body %></p>
                     </div>
                     <div class="msg-date">
-                      <%= message.created_at.strftime("%H:%M") %>
+                      <%= message.created_at.strftime("%H:%M on %a") %>
                       </div>
                     </div>
                 </div>
               <% else %>
               <div class="msg-cont-receiver">
                   <div class="msg-receiver">
-                  <%#= image_tag avatar_url, class: "avatar-sm" %>
-                    <%#= message.sender.first_name %>
                     <div class="msg-content">
                       <p><%= message.body %></p>
                     </div>
                     <div class="msg-date">
-                      <%= message.created_at.strftime("%H:%M") %>
+                      <%= message.created_at.strftime("%H:%M on  %a") %>
                     </div>
                   </div>
                 </div>
