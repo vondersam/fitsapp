@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161230093311) do
+ActiveRecord::Schema.define(version: 20161230184032) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -92,6 +92,17 @@ ActiveRecord::Schema.define(version: 20161230093311) do
     t.index ["sender_id"], name: "index_messages_on_sender_id", using: :btree
   end
 
+  create_table "plans", force: :cascade do |t|
+    t.integer  "user_id"
+    t.date     "date"
+    t.string   "meal"
+    t.string   "excercise"
+    t.string   "meditation"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_plans_on_user_id", using: :btree
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",     null: false
     t.string   "encrypted_password",     default: "",     null: false
@@ -118,4 +129,5 @@ ActiveRecord::Schema.define(version: 20161230093311) do
   add_foreign_key "mailboxer_conversation_opt_outs", "mailboxer_conversations", column: "conversation_id", name: "mb_opt_outs_on_conversations_id"
   add_foreign_key "mailboxer_notifications", "mailboxer_conversations", column: "conversation_id", name: "notifications_on_conversation_id"
   add_foreign_key "mailboxer_receipts", "mailboxer_notifications", column: "notification_id", name: "receipts_on_notification_id"
+  add_foreign_key "plans", "users"
 end
