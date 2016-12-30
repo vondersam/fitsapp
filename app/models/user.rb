@@ -18,7 +18,7 @@ class User < ApplicationRecord
 
   # Mailboxer users page
   def index
-      @users = User.order('created_at DESC').paginate(page: params[:page], per_page: 30)
+    @users = User.order('created_at DESC').paginate(page: params[:page], per_page: 30)
   end
 
   # for activeadmin

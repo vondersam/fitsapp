@@ -1,6 +1,6 @@
 ActiveAdmin.register Message do
   permit_params :sender, :recipient, :content
-  # index do
+    # index do
   #     selectable_column
   #     column :id
   #     column :sender
