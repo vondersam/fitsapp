@@ -25,6 +25,4 @@ class User < ApplicationRecord
   def name
     "#{email}"
   end
-
-
 end

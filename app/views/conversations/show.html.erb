@@ -1,13 +1,13 @@
 <%= content_for(:title) do %>
-  Bookaround | Messages
+  Fitsapp | Messages
 <% end %>
 
 <div class="container">
   <div class="msg-avatar-left">
-    <%#= link_to(user_path(@other[0]), {class: "card-link"}) do %>
-      <%#= image_tag @other[0].profile_pic_url, class: "avatar-md" %>
-        <%#= @other[0].first_name %>
-      <%# end %>
+    <%= link_to(user_path(@other[0]), {class: "card-link"}) do %>
+      <%= image_tag @other[0].pic_url, class: "avatar" %>
+        <%= @other[0].first_name %>
+      <% end %>
   </div>
 
   <div class="panel panel-default">

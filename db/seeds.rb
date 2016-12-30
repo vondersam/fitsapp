@@ -59,7 +59,7 @@ samuelbrown.email = "samuel@rodriguez.com"
 samuelbrown.pic_url = "http://lorempixel.com/400/400/people/"
 samuelbrown.password = "FUBARS"
 samuelbrown.password_confirmation = "FUBARS"
-samuel.role = "user"
+samuelbrown.role = "user"
 samuelbrown.valid?
 samuelbrown.save!
 
