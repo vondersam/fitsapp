@@ -37,7 +37,7 @@ jasper.password_confirmation = "FUBARS"
 jasper.valid?
 jasper.save!
 
-samuelbrown = Trainer.new
+samuelbrown = User.new
 samuelbrown.first_name = "Samuel"
 samuelbrown.last_name = "Rodriguez"
 samuelbrown.email = "samuel@rodriguez.com"
@@ -47,7 +47,7 @@ samuelbrown.password_confirmation = "FUBARS"
 samuelbrown.valid?
 samuelbrown.save!
 
-random = Trainer.new
+random = User.new
 random.first_name = "Henrich"
 random.last_name = "Fruchart"
 random.email = "henrich@fruchart.com"
