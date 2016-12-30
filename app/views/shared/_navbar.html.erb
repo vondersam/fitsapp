@@ -21,6 +21,7 @@
           <% if can? :create, @plan %>
            <%= link_to t(".top_call_to_action", default: "Create plan"), new_plan_path(@plan), class: "navbar-item navbar-button btn" %>
           <% end %>
+           <%= link_to t(".top_call_to_action", default: "See plans"), plans_path, class: "navbar-item navbar-button btn" %>
           <%= link_to t(".top_call_to_action", default: "Chat"), conversations_path, class: "navbar-item navbar-button btn" %>
         <% end %>
           <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-menu", "data-toggle" => "dropdown" %>
@@ -52,32 +53,55 @@
   <div class="navbar-right hidden-md hidden-lg">
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
-    <% avatar_url = current_user.pic_url %>
-    <div class="dropdown">
-      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
-        <li>
-          <%= link_to "#" do %>
-            <i class="fa fa-user"></i> <%= t(".profile", default: "My profile") %>
-          <% end %>
-        </li>
-        <li>
-        <%= link_to conversations_path do %>
-          <i class="fa fa-envelope"></i> <%= t(".chat", default: "Chat") %>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to destroy_user_session_path, method: :delete do %>
-            <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-          <% end %>
-        </li>
-      </ul>
-    </div>
-    <% else %>
+      <% avatar_url = current_user.pic_url %>
+      <div class="dropdown">
+        <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+        <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
+          <% if current_user.admin %>
+            <li>
+              <%= link_to t(".top_call_to_action", default: "Admin"), admin_root_path %>
+            </li>
+            <% end %>
+          <% unless current_user.admin %>
+            <% if can? :create, @plan %>
 
+              <li>
+                <%= link_to new_plan_path(@plan) do %>
+                  <i class="fa fa-history"></i> <%= t(".create_plan", default: "Create plan") %>
+                <% end %>
+              </li>
+            <% end %>
+
+            <li>
+              <%= link_to plans_path do %>
+                <i class="fa fa-sun-o"></i> <%= t(".index_plans", default: "See plans") %>
+              <% end %>
+            </li>
+
+            <li>
+              <%= link_to conversations_path do %>
+                <i class="fa fa-envelope"></i> <%= t(".chat", default: "Chat") %>
+              <% end %>
+            </li>
+          <% end %>
+
+          <li>
+            <%= link_to user_path(current_user) do %>
+              <i class="fa fa-user"></i> <%= t(".profile", default: "My profile") %>
+            <% end %>
+          </li>
+
+          <li>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+              <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+            <% end %>
+          </li>
+
+        </ul>
+      </div>
+    <% else %>
       <!-- Login text link -->
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-item navbar-link" %>
-
     <% end %>
   </div>
 </div>

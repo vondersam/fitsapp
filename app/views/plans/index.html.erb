@@ -1,0 +1,13 @@
+  <div class="container">
+    <div class="row">
+        <% @plans.each do | plan | %>
+        <div class="col-sm-4 col-sm-offset-4 card">
+        <h2><%= plan.title %></h2>
+        <p><%= plan.date %></p>
+        <p><%= plan.meal %></p>
+        <p><%= plan.exercise %></p>
+        <p><%= plan.meditation %></p>
+        </div>
+        <% end %>
+    </div>
+  </div>

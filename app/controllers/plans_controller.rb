@@ -22,7 +22,7 @@ class PlansController < ApplicationController
   @new_plan = Plan.new(plan_params)
   @new_plan.user = current_user
   if @new_plan.save
-    redirect_to user_path(current_user)
+    redirect_to plans_path
   else
     render :new
   end

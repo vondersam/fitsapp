@@ -7,6 +7,7 @@ class User < ApplicationRecord
   acts_as_messageable
   has_many :sent_messages, class_name: "Message", foreign_key: "sender_id"
   has_many :received_messages, class_name: "Message", foreign_key: "recipient_id"
+  has_many :plans
 
   # roles
   ROLES = %i[admin trainer user]
