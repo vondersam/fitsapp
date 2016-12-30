@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :received_messages, class_name: "Message", foreign_key: "recipient_id"
 
   # roles
-  ROLES = %i[trainer user]
+  ROLES = %i[admin trainer user]
 
   # Mailboxer email configuration
   def mailboxer_email(object)

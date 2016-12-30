@@ -17,7 +17,9 @@
         <% if current_user.admin %>
           <%= link_to t(".top_call_to_action", default: "Admin"), admin_root_path, class: "navbar-item navbar-button btn" %>
           <% end %>
+        <% unless current_user.admin %>
           <%= link_to t(".top_call_to_action", default: "Chat"), conversations_path, class: "navbar-item navbar-button btn" %>
+        <% end %>
           <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
             <li>

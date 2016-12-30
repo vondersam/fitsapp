@@ -16,7 +16,7 @@
         <div class="panel-heading"><%= @conversation.subject %></div>
           <div class="panel-body msg-background">
             <div class="messages">
-            <% @conversation.receipts_for(current_user).each do |receipt| %>
+            <% @conversation.receipts_for(current_user).reverse.each do |receipt| %>
             <% message = receipt.message %>
 
             <% if message.sender == current_user %>

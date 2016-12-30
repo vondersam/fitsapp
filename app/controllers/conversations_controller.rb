@@ -69,7 +69,7 @@
   end
 
    def get_conversation
-    @conversation ||= conversations.find(params[:id])
+    @conversation ||= @mailbox.conversations.find(params[:id])
   end
 
 end
