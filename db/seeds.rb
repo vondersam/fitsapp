@@ -7,6 +7,18 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+
+admin = User.new
+admin.first_name = "admin"
+admin.last_name = "admin"
+admin.email = "admin@fitsapp.com"
+admin.pic_url = "http://lorempixel.com/400/400/people/"
+admin.password = "FUBARS"
+admin.password_confirmation = "FUBARS"
+admin.admin = true
+admin.valid?
+admin.save!
+
 samuel = User.new
 samuel.first_name = "Samuel"
 samuel.last_name = "Horn"
