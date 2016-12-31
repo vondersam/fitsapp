@@ -59,7 +59,9 @@
         <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
           <% if current_user.admin %>
             <li>
-              <%= link_to t(".top_call_to_action", default: "Admin"), admin_root_path %>
+              <%= link_to admin_root_path do %>
+                <i class="fa fa-lock"></i> <%= t(".admin", default: "Admin") %>
+              <% end %>
             </li>
             <% end %>
           <% unless current_user.admin %>

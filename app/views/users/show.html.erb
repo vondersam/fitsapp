@@ -9,15 +9,10 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-12">
+    <div class="col-xs-12 col-md-6">
       <h2><%= @user.first_name %><%= " " %><%= @user.last_name %></h2>
-      <p><%= @user.role %></p>
+      <p><%= @user.role.capitalize %></p>
+      <p class="user-card"><%= @user.bio %></p>
     </div>
   </div>
 </div>
-
-
-<%# if @user.plan.any? %>
-
-    <%#= @user.plan.title %>
-    <%# end %>

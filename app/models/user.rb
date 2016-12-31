@@ -9,7 +9,13 @@ class User < ApplicationRecord
   has_many :received_messages, class_name: "Message", foreign_key: "recipient_id"
   has_many :plans
 
-  # roles
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :email, presence: true, uniqueness: true
+  validates :pic_url, presence: true
+
+
+  # roles for cancancan
   ROLES = %i[admin trainer user]
 
   # Mailboxer email configuration

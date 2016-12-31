@@ -4,6 +4,8 @@
     <h1>Your mental and physical training guide</h1>
     <div class="number of users">
     </div>
-    <%= link_to t(".sign_in", default: "Log In"), new_user_session_path, class: "btn btn-primary btn-lg" %>
+    <% unless user_signed_in? %>
+      <%= link_to t(".sign_in", default: "Log In"), new_user_session_path, class: "btn btn-primary btn-lg" %>
+    <% end %>
   </div>
 </div>
