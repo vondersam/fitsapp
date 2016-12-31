@@ -14,7 +14,6 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   validates :pic_url, presence: true
 
-
   # roles for cancancan
   ROLES = %i[admin trainer user]
 
