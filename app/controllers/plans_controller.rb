@@ -1,6 +1,7 @@
 class PlansController < ApplicationController
   before_action :set_plan, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource
+
   def index
     @plans = Plan.all
   end
@@ -67,7 +68,6 @@ end
   def require_permission
     if current_user != Plan.find(params[:id]).user
       redirect_to root_path
-        #Or do something else here
       end
     end
 end

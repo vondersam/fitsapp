@@ -4,7 +4,6 @@
 
 <div class="container">
   <h2 class="text-center">Messages</h2>
-
   <div class="row">
     <div class="col-sm-3">
       <ul class="nav nav-pills nav-stacked">
@@ -24,11 +23,12 @@
        data: {confirm: 'Are you sure?'} %>
        <%# end %>
 
-       <ul class="list-group">
+      <ul class="list-group">
         <%= render partial: 'conversations/conversation', collection: @conversations %>
       </ul>
 
       <%= will_paginate %>
     </div>
+  </div>
 </div>
 

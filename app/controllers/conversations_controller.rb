@@ -71,6 +71,5 @@
    def get_conversation
     @conversation ||= @mailbox.conversations.find(params[:id])
   end
-
 end
 
